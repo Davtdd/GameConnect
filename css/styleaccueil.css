@@ -1,0 +1,230 @@
+body {
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 60%, #4e342e 100%);
+  color: #e0e0e0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: rgba(20, 24, 36, 0.97);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0 2px 8px #0002;
+  border-bottom: 1.5px solid #263238;
+}
+
+header a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #90caf9;
+  font-weight: bold;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+
+header a:hover {
+  color: #4e342e;
+}
+
+.btn-creer-post {
+  display: inline-block;
+  margin: 2.2rem auto 0 auto;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(90deg, #1976d2 60%, #4e342e 100%);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0004;
+  font-size: 1.1rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-creer-post:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #3e2723 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 22px;
+  padding: 30px 10px 60px 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.post {
+  background: rgba(20, 24, 36, 0.98);
+  padding: 15px 14px 12px 14px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0003;
+  width: 240px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1.5px solid #263238;
+  transition: box-shadow 0.2s, transform 0.1s;
+  position: relative;
+}
+
+.post:hover {
+  box-shadow: 0 6px 24px #1976d2aa, 0 2px 12px #0003;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.post-header img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+  border: 2px solid #1976d2;
+}
+
+.post-header strong {
+  color: #90caf9;
+  font-size: 1.05rem;
+}
+
+.post-content p {
+  color: #e0e0e0;
+  font-size: 0.98rem;
+  margin: 0 0 6px 0;
+  word-break: break-word;
+}
+
+.post-content img {
+  max-width: 100%;
+  margin-top: 7px;
+  border-radius: 7px;
+  box-shadow: 0 1px 6px #0005;
+}
+
+.post-actions {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-supprimer {
+  color: #ff5252 !important;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.btn-supprimer:hover {
+  color: #b71c1c !important;
+}
+
+.like-icon {
+  color: #90caf9;
+  font-size: 1.15rem;
+  transition: color 0.2s;
+}
+
+.like-icon:hover {
+  color: #1976d2;
+}
+
+.comment-icon {
+  color: #bdbdbd;
+  font-size: 1.15rem;
+  transition: color 0.2s;
+}
+
+.comment-icon:hover {
+  color: #4e342e;
+}
+
+.comments {
+  margin-top: 8px;
+  padding-left: 7px;
+  border-left: 2px solid #263238;
+}
+
+.comment {
+  margin-bottom: 5px;
+  color: #bdbdbd;
+  font-size: 0.93rem;
+  display: flex;
+  align-items: center;
+}
+
+.comment img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 6px;
+  object-fit: cover;
+  border: 1.5px solid #1976d2;
+}
+
+.comment strong {
+  color: #90caf9;
+  margin-right: 3px;
+}
+
+footer {
+  margin-top: auto;
+  width: 100vw;
+  background: rgba(20, 24, 36, 0.95);
+  border-top: 1.5px solid #263238;
+  box-shadow: 0 -2px 12px #0003;
+  padding: 1.2rem 0;
+  text-align: center;
+}
+
+footer .container {
+  max-width: 100vw;
+  padding: 0;
+  margin: 0 auto;
+  display: block;
+}
+
+footer p {
+  color: #90caf9;
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 2px 60px 2px;
+  }
+  .post {
+    width: 97vw;
+    min-width: unset;
+    max-width: 99vw;
+    padding: 10px 4px 10px 4px;
+  }
+  .btn-creer-post {
+    width: 90vw;
+    font-size: 1rem;
+    padding: 0.6rem 0.5rem;
+  }
+  footer p {
+    font-size: 0.9rem;
+  }
+}
