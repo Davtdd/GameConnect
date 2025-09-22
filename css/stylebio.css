@@ -1,0 +1,149 @@
+body {
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 60%, #4e342e 100%);
+  color: #e0e0e0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #90caf9;
+  margin-top: 2.5rem;
+  margin-bottom: 0.7rem;
+  text-shadow: 0 2px 8px #000a, 0 1px 0 #1565c0;
+  font-size: 2.1rem;
+}
+
+.avatar-bio {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1976d2;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 12px #0005;
+}
+
+h2 {
+  color: #4e342e;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.card-post {
+  background: rgba(20, 24, 36, 0.98);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0003;
+  width: 220px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1.5px solid #263238;
+  padding: 14px 12px 10px 12px;
+  transition: box-shadow 0.2s, transform 0.1s;
+  position: relative;
+}
+
+.card-post:hover {
+  box-shadow: 0 6px 24px #1976d2aa, 0 2px 12px #0003;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.card-post h3 {
+  color: #90caf9;
+  font-size: 1.05rem;
+  margin: 0 0 7px 0;
+  word-break: break-word;
+}
+
+.card-post img {
+  max-width: 100%;
+  margin-top: 7px;
+  border-radius: 7px;
+  box-shadow: 0 1px 6px #0005;
+}
+
+.card-post p {
+  color: #bdbdbd;
+  font-size: 0.93rem;
+  margin: 7px 0 0 0;
+}
+
+/* Style pour les liens de navigation (retour au profil, accueil) */
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  background: linear-gradient(90deg, #1976d2 60%, #4e342e 100%);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px #0004;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #3e2723 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+footer {
+  margin-top: auto;
+  width: 100vw;
+  background: rgba(20, 24, 36, 0.95);
+  border-top: 1.5px solid #263238;
+  box-shadow: 0 -2px 12px #0003;
+  padding: 1.2rem 0;
+  text-align: center;
+}
+
+.footer-container p {
+  color: #90caf9;
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .card-post {
+    width: 95vw;
+    min-width: unset;
+    max-width: 99vw;
+    padding: 10px 4px 10px 4px;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .footer-container p {
+    font-size: 0.9rem;
+  }
+}

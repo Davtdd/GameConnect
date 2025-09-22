@@ -58,7 +58,7 @@ if (!$posts_result) {
             <!-- Header du post -->
             <div class="post-header">
                 <img src="<?= htmlspecialchars($post['avatar']) ?>" alt="Avatar">
-                <strong><?= htmlspecialchars($post['pseudo']) ?></strong>
+                <a href="bio.php?user=<?= htmlspecialchars($post['pseudo']) ?> " style="text-decoration: none;"><strong><?= htmlspecialchars($post['pseudo']) ?></strong></a>
             </div>
 
             <!-- Contenu du post -->
