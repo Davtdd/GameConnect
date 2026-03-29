@@ -122,7 +122,6 @@ $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
 //     }
 // }
 
-
 header('Location: connexion.php');
 exit();
 
