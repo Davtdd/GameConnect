@@ -1,0 +1,241 @@
+/* ===== Body & Global ===== */
+body {
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 60%, #4e342e 100%);
+    color: #e0e0e0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+    background: rgba(20, 24, 36, 0.97);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: 0 2px 8px #0002;
+    border-bottom: 1.5px solid #263238;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: #90caf9;
+    font-weight: bold;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+header a:hover {
+    color: #4e342e;
+}
+
+/* ===== Bouton créer post ===== */
+.btn-creer-post {
+    display: block;
+    margin: 2.2rem auto;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(90deg, #1976d2 60%, #4e342e 100%);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #0004;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-creer-post:hover {
+    background: linear-gradient(90deg, #1565c0 60%, #3e2723 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* ===== Container ===== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    padding: 30px 10px 60px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== Post Card ===== */
+.post {
+    background: rgba(20, 24, 36, 0.98);
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #0004;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid #263238;
+    transition: box-shadow 0.3s, transform 0.2s;
+    position: relative;
+}
+
+.post:hover {
+    box-shadow: 0 6px 20px #1976d2aa, 0 2px 12px #0003;
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* ===== Post Header ===== */
+.post-header {
+    display: flex;
+    align-items: normal;
+    margin-bottom: 10px;
+}
+
+.post-header img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 2px solid #1976d2;
+}
+
+.post-header a {
+    text-decoration: none;
+}
+
+.post-header strong {
+    color: #90caf9;
+    font-size: 1.06rem;
+}
+
+/* ===== Contenu ===== */
+.post-content p {
+    color: #e0e0e0;
+    font-size: 0.97rem;
+    margin: 0 0 8px 0;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.post-content a {
+    color: #64b5f6;
+    font-size: 0.95rem;
+    word-break: break-word;
+    text-decoration: underline;
+}
+
+.post-content img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0005;
+}
+
+/* ===== Post Actions ===== */
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-supprimer {
+    color: #ff5252 !important;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-supprimer:hover {
+    color: #b71c1c !important;
+}
+
+.like-icon, .comment-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.like-icon:hover {
+    color: #1976d2;
+}
+
+.comment-icon:hover {
+    color: #4e342e;
+}
+
+/* ===== Comments ===== */
+.comments {
+    margin-top: 10px;
+    padding-left: 8px;
+    border-left: 2px solid #263238;
+}
+
+.comment {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 0.93rem;
+    color: #bdbdbd;
+}
+
+.comment img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-right: 6px;
+    border: 1.5px solid #1976d2;
+    object-fit: cover;
+}
+
+.comment strong {
+    color: #90caf9;
+    margin-right: 4px;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: auto;
+    width: 100%;
+    background: rgba(20, 24, 36, 0.95);
+    border-top: 1.5px solid #263238;
+    box-shadow: 0 -2px 12px #0003;
+    padding: 1.3rem 0;
+    text-align: center;
+}
+
+footer p {
+    color: #90caf9;
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 2px 60px 2px;
+    }
+
+    .post {
+        width: 95%;
+        padding: 12px;
+    }
+
+    .btn-creer-post {
+        width: 90%;
+        font-size: 1rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
