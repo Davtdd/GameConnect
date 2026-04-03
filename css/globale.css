@@ -1,4 +1,8 @@
-/* ===== RESET & BASE ===== */
+/* =========================================================
+   THEME SOMBRE BLEU MARINE - RESPONSIVE & LISIBLE
+   ========================================================= */
+
+/* ----- RESET & BASE ----- */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +10,8 @@
 }
 
 body {
-  background-color: #0b1a2f;  /* marine profond */
-  color: #e3eaf0;            /* gris clair lisible */
+  background-color: #0b1a2f;
+  color: #e3eaf0;
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   padding: 20px;
@@ -23,29 +27,46 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== CONTENEURS ===== */
-.container, .posts-container, .cards-container {
+/* ----- CONTENEURS ----- */
+.container,
+.posts-container {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* ===== HEADER ===== */
+/* ----- HEADER (nav avec petit avatar) ----- */
 header {
   background-color: #0a1424;
-  padding: 1rem 2rem;
-  border-radius: 20px;
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
   margin-bottom: 2rem;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Image du header : petite, cliquable, n’obstrue pas la vue */
+header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3b6e8b;
+  transition: transform 0.2s, border 0.2s;
+  background-color: #1e3a4a;
+}
+header img:hover {
+  transform: scale(1.02);
+  border-color: #7ab7ef;
+}
+
 header a {
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   background-color: #1e2f41;
   border-radius: 30px;
 }
@@ -54,16 +75,16 @@ header a:hover {
   text-decoration: none;
 }
 
-/* ===== BOUTON CRÉER POST (accueil) ===== */
+/* ----- BOUTON CRÉER POST ----- */
 .btn-creer-post {
   display: inline-block;
   background-color: #1f6e8c;
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1.4rem;
   border-radius: 40px;
   margin-bottom: 2rem;
   font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: background 0.2s;
 }
 .btn-creer-post:hover {
@@ -71,27 +92,32 @@ header a:hover {
   text-decoration: none;
 }
 
-/* ===== CARTE POST + COMMENTAIRES (layout accueil) ===== */
+/* ----- LAYOUT DES POSTS (carte post + zone commentaire côte à côte) ----- */
 .post-row {
   display: flex;
   gap: 1.8rem;
   margin-bottom: 2.5rem;
   background: transparent;
+  align-items: stretch;
 }
 
+/* CARTE POST (côté gauche) – taille moyenne, confortable */
 .post-card {
-  flex: 2;          /* carte post prend 2/3 */
+  flex: 3;
   background: #11212e;
-  border-radius: 24px;
+  border-radius: 28px;
   padding: 1.2rem 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
   transition: transform 0.1s ease;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ZONE COMMENTAIRE (côté droit) */
 .comment-area {
-  flex: 1;          /* zone commentaire prend 1/3 */
+  flex: 1.8;
   background: #0f1c26;
-  border-radius: 24px;
+  border-radius: 28px;
   padding: 1rem 1.2rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -99,7 +125,7 @@ header a:hover {
   gap: 1rem;
 }
 
-/* responsive : sur mobile, passage en colonne */
+/* responsive : sur tablette/mobile, les deux zones passent en colonne */
 @media (max-width: 900px) {
   .post-row {
     flex-direction: column;
@@ -109,78 +135,103 @@ header a:hover {
   }
 }
 
-/* ===== CONTENU D'UNE CARTE POST ===== */
+/* ----- CONTENU DE LA CARTE POST ----- */
 .post-header {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 1rem;
   border-bottom: 1px solid #2a3f50;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.7rem;
 }
 .post-header img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
-  background: #1e3a4a;
   border: 1px solid #3a6b8c;
 }
 .post-header a {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #cbe4fe;
 }
 
 .post-content {
-  margin: 1rem 0;
+  margin: 0.8rem 0;
+  flex: 1;
 }
 .post-content p {
   margin-bottom: 0.8rem;
   white-space: pre-wrap;
+  font-size: 0.95rem;
 }
 .post-content a {
   word-break: break-all;
   display: inline-block;
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
   color: #6ab0f5;
 }
 .post-content img {
   max-width: 100%;
-  border-radius: 16px;
+  max-height: 350px;   /* image post pas trop grande, lisible */
+  width: auto;
+  border-radius: 20px;
   margin-top: 12px;
   border: 1px solid #2e4d64;
+  object-fit: contain;
 }
 
+/* ----- ACTIONS DU POST (like + suppression) EN BAS ----- */
 .post-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.8rem;
   margin-top: 1rem;
   border-top: 1px solid #2a3f50;
   padding-top: 0.8rem;
 }
-.post-actions span {
-  cursor: pointer;
-  font-size: 1.3rem;
+
+.delete-icon {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+}
+.btn-supprimer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c;
+  text-decoration: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-supprimer:hover {
+  background-color: rgba(231, 76, 60, 0.15);
+  transform: scale(1.05);
+}
+
+.like-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
   transition: transform 0.1s;
 }
-.post-actions span:hover {
+.like-icon:hover {
   transform: scale(1.05);
 }
 .like-count {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-}
-.btn-supprimer {
-  font-size: 1.3rem;
-  font-weight: bold;
+  color: #c0d4f0;
 }
 
-/* ===== ZONE COMMENTAIRE (droite) ===== */
+/* ----- ZONE COMMENTAIRES (à droite) ----- */
 .comment-form textarea {
   width: 100%;
   background: #09161f;
@@ -201,8 +252,8 @@ header a:hover {
   background-color: #2c6e8f;
   border: none;
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
   margin-top: 0.5rem;
   cursor: pointer;
   font-weight: 500;
@@ -217,9 +268,9 @@ header a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  max-height: 250px;
+  max-height: 260px;
   overflow-y: auto;
-  padding-right: 5px;
+  padding-right: 4px;
 }
 .comment {
   background: #0f1b24;
@@ -244,10 +295,10 @@ header a:hover {
   word-break: break-word;
 }
 
-/* ===== PAGE PROFIL / BIO ===== */
+/* ----- PAGE PROFIL / BIO ----- */
 .avatar-bio {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #3b6e8b;
@@ -269,7 +320,8 @@ header a:hover {
 }
 .card-post img {
   max-width: 100%;
-  border-radius: 12px;
+  max-height: 280px;
+  border-radius: 16px;
   margin-top: 10px;
 }
 .card-post h3 {
@@ -287,7 +339,7 @@ header a:hover {
   }
 }
 
-/* ===== FORMULAIRES (inscription, connexion, création post, modif profil) ===== */
+/* ----- FORMULAIRES (inscription, connexion, création post, modif) ----- */
 form {
   background: #0f1c26;
   padding: 2rem;
@@ -333,6 +385,7 @@ form button, form input[type="submit"] {
 form button:hover, form input[type="submit"]:hover {
   background-color: #358fae;
 }
+
 .nav-links {
   display: flex;
   gap: 1rem;
@@ -350,7 +403,7 @@ form button:hover, form input[type="submit"]:hover {
   text-decoration: none;
 }
 
-/* ===== MESSAGES ERREUR / SUCCÈS ===== */
+/* ----- MESSAGES ERREUR / SUCCÈS ----- */
 .erreur, .success {
   text-align: center;
   padding: 0.8rem;
@@ -370,7 +423,7 @@ form button:hover, form input[type="submit"]:hover {
   border-left: 5px solid #4caf50;
 }
 
-/* ===== FOOTER ===== */
+/* ----- PIED DE PAGE ----- */
 footer {
   text-align: center;
   margin-top: 4rem;
@@ -381,7 +434,7 @@ footer {
   color: #8aaec0;
 }
 
-/* ===== AJUSTEMENTS DIVERS ===== */
+/* ----- TYPOGRAPHIE & DIVERS ----- */
 h1, h2, h3 {
   color: #d4ecff;
   font-weight: 500;
@@ -391,10 +444,8 @@ hr {
   border-color: #1c4055;
   margin: 1rem 0;
 }
-button, .btn-like, .comment-icon {
-  cursor: pointer;
-}
-/* masquer scrollbar si besoin */
+
+/* scrollbar discrète */
 ::-webkit-scrollbar {
   width: 8px;
   background: #0a1822;

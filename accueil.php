@@ -1,10 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 session_start();
-
-
 require 'config.php';// doit définir $id = mysqli_connect(...)
 
 
@@ -70,7 +66,11 @@ if (!$posts_result) {
 </head>
 <body>
     <header>
-    <a href="profil.php">Mon Profil</a>
+        
+        <a href="bio.php?user=<?= htmlspecialchars($user['pseudo']) ?>" style="text-decoration: none;">
+                <img src="<?= htmlspecialchars($user['avatar']) ?>" alt="Avatar">
+                    </a>
+    <a href="profil.php">Modification</a>
     <a href="deconnexion.php">Déconnexion</a>
 </header>
 
@@ -104,18 +104,33 @@ if (!$posts_result) {
                     <?php endif; ?>
                 </div>
 
-                <!-- Actions : like, suppression (si auteur) -->
-                <div class="post-actions">
-                    <?php if ($post['pseudo'] === $_SESSION['pseudo']) : ?>
-                        <span class="delete-icon">
-                            <a href="delete_post.php?id=<?= $post['idp'] ?>" class="btn-supprimer" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')" style="text-decoration: none; color:red;">✖</a>
-                        </span>
-                    <?php endif; ?>
-
-                    <span class="like-icon" data-post-id="<?= $post['idp'] ?>" style="cursor:pointer; font-size:20px;">
-                        🤍 <span class="like-count" id="like-count-<?= $post['idp'] ?>">0</span>
-                    </span>
-                </div>
+                
+<?php
+    $userId = (int)$_SESSION['idu'];
+    $postId = (int)$post['idp'];
+    
+    // Requêtes directes
+    $res_check = mysqli_query($id, "SELECT COUNT(*) as cnt FROM likes WHERE idu = $userId AND idp = $postId");
+    $row_check = mysqli_fetch_assoc($res_check);
+    $alreadyLiked = ($row_check['cnt'] > 0);
+    
+    $res_count = mysqli_query($id, "SELECT COUNT(*) as cnt FROM likes WHERE idp = $postId");
+    $row_count = mysqli_fetch_assoc($res_count);
+    $likeCount = (int)$row_count['cnt'];
+?>
+<!-- Actions : like, suppression (si auteur) -->
+<div class="post-actions">
+    <?php if ($post['pseudo'] === $_SESSION['pseudo']) : ?>
+        <span class="delete-icon">
+            <a href="delete_post.php?id=<?= $post['idp'] ?>" class="btn-supprimer" onclick="return confirm('Supprimer ?')">✖</a>
+        </span>
+    <?php endif; ?>
+    
+    <span class="like-icon" data-post-id="<?= $postId ?>" onclick="toggleLike(this, <?= $postId ?>)" style="cursor:pointer; font-size:20px;">
+        <?= $alreadyLiked ? '❤️ ' : '🤍 ' ?>
+        <span class="like-count" id="like-count-<?= $postId ?>"><?= $likeCount ?></span>
+    </span>
+</div>
             </div>
 
             <!-- Colonne droite : zone commentaire -->
@@ -151,7 +166,9 @@ if (!$posts_result) {
                     ?>
                         <div class="comment">
                             <img src="<?= htmlspecialchars($comment['avatar']) ?>" alt="Avatar">
-                            <strong><?= htmlspecialchars($comment['pseudo']) ?> :</strong>
+                    <a href="bio.php?user=<?= htmlspecialchars($comment['pseudo']) ?>" style="text-decoration: none;">
+                        <strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
+                    </a>
                             <span><?= nl2br(htmlspecialchars($comment['texte'], ENT_QUOTES, 'UTF-8')) ?></span>
                         </div>
                     <?php endwhile; ?>
@@ -168,6 +185,46 @@ if (!$posts_result) {
             <p>&copy; 2026 GameConnect. Tous droits réservés.</p>
         </div>
     </footer>
-    <script src="likebtn.js"></script>
+    <script>
+function toggleLike(element, postId) {
+    console.log("Clic sur le cœur, postId =", postId);
+    
+    // Chercher le span du compteur à l'intérieur de l'élément cliqué
+    const countSpan = element.querySelector('.like-count');
+    if (!countSpan) {
+        console.error("Span compteur introuvable à l'intérieur de l'élément", element);
+        return;
+    }
+    
+    console.log("Compteur trouvé, texte actuel :", countSpan.textContent);
+
+    fetch('like.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'post_id=' + postId
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert("Erreur : " + data.error);
+            return;
+        }
+        countSpan.textContent = data.likeCount;
+        // Mettre à jour le cœur (premier nœud texte)
+        const heartNode = element.childNodes[0];
+        if (heartNode && heartNode.nodeType === Node.TEXT_NODE) {
+            heartNode.nodeValue = data.liked ? '❤️ ' : '🤍 ';
+        }
+        console.log("Like mis à jour :", data.likeCount, data.liked);
+    })
+    .catch(err => {
+        console.error("Erreur fetch :", err);
+        alert("Problème réseau, regarde la console.");
+    });
+}
+console.log("Script like intégré, fonction toggleLike prête");
+</script>
 </body>
 </html>

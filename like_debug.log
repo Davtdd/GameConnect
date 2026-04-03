@@ -1,0 +1,587 @@
+2026-04-03 15:27:37 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+2026-04-03 15:30:18 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=8, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 3
+likeCount final = 1, liked = true
+2026-04-03 15:30:58 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=8, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 15:32:18 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=8, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 4
+likeCount final = 1, liked = true
+2026-04-03 15:32:27 - Début like.php
+POST : Array
+(
+    [post_id] => 6
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=6, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 5
+likeCount final = 1, liked = true
+2026-04-03 15:32:35 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 6
+likeCount final = 1, liked = true
+2026-04-03 15:39:46 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=8, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 7
+likeCount final = 1, liked = true
+2026-04-03 15:39:49 - Début like.php
+POST : Array
+(
+    [post_id] => 6
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=6, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 8
+likeCount final = 1, liked = true
+2026-04-03 15:39:55 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 9
+likeCount final = 1, liked = true
+2026-04-03 15:47:31 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 15:47:34 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 10
+likeCount final = 1, liked = true
+2026-04-03 15:47:36 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 15:47:37 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 11
+likeCount final = 1, liked = true
+2026-04-03 15:47:38 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 15:47:39 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=10, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 12
+likeCount final = 1, liked = true
+2026-04-03 15:47:44 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=8, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 15:47:51 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=8, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 13
+likeCount final = 1, liked = true
+2026-04-03 15:47:54 - Début like.php
+POST : Array
+(
+    [post_id] => 6
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=6, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 15:47:56 - Début like.php
+POST : Array
+(
+    [post_id] => 6
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=6, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 14
+likeCount final = 1, liked = true
+2026-04-03 15:48:01 - Début like.php
+POST : Array
+(
+    [post_id] => 4
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=4, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 15
+likeCount final = 1, liked = true
+2026-04-03 15:48:02 - Début like.php
+POST : Array
+(
+    [post_id] => 4
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=4, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 15:48:06 - Début like.php
+POST : Array
+(
+    [post_id] => 5
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=5, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 16
+likeCount final = 1, liked = true
+2026-04-03 15:48:06 - Début like.php
+POST : Array
+(
+    [post_id] => 5
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=5, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 16:00:58 - Début like.php
+POST : Array
+(
+    [post_id] => 1
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=1, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 16:05:01 - Début like.php
+POST : Array
+(
+    [post_id] => 4
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=4, userId=1
+alreadyLiked: non
+INSERT réussi, ID insert: 17
+likeCount final = 1, liked = true
+2026-04-03 16:05:09 - Début like.php
+POST : Array
+(
+    [post_id] => 4
+)
+
+SESSION : Array
+(
+    [pseudo] => dwriteger
+    [idu] => 1
+    [email] => eliote@gmail.com
+    [bio] => Bienvenue dans mon monde !!
+    [avatar] => uploads/avatars/69c6628f1d337_pexels-chaikong2511-185725.jpg
+    [success] => Profil mis à jour avec succès !
+)
+
+postId=4, userId=1
+alreadyLiked: oui
+likeCount final = 0, liked = false
+2026-04-03 16:12:12 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => Eclaire
+    [idu] => 4
+)
+
+postId=8, userId=4
+alreadyLiked: non
+INSERT réussi, ID insert: 18
+likeCount final = 2, liked = true
+2026-04-03 16:12:15 - Début like.php
+POST : Array
+(
+    [post_id] => 6
+)
+
+SESSION : Array
+(
+    [pseudo] => Eclaire
+    [idu] => 4
+)
+
+postId=6, userId=4
+alreadyLiked: non
+INSERT réussi, ID insert: 19
+likeCount final = 2, liked = true
+2026-04-03 16:12:16 - Début like.php
+POST : Array
+(
+    [post_id] => 4
+)
+
+SESSION : Array
+(
+    [pseudo] => Eclaire
+    [idu] => 4
+)
+
+postId=4, userId=4
+alreadyLiked: non
+INSERT réussi, ID insert: 20
+likeCount final = 1, liked = true
+2026-04-03 16:12:19 - Début like.php
+POST : Array
+(
+    [post_id] => 5
+)
+
+SESSION : Array
+(
+    [pseudo] => Eclaire
+    [idu] => 4
+)
+
+postId=5, userId=4
+alreadyLiked: non
+INSERT réussi, ID insert: 21
+likeCount final = 1, liked = true
+2026-04-03 16:12:28 - Début like.php
+POST : Array
+(
+    [post_id] => 1
+)
+
+SESSION : Array
+(
+    [pseudo] => Eclaire
+    [idu] => 4
+)
+
+postId=1, userId=4
+alreadyLiked: non
+INSERT réussi, ID insert: 22
+likeCount final = 1, liked = true

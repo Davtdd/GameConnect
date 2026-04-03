@@ -50,6 +50,9 @@ if (!$posts_result) {
     
 <div class="nav-links">
     <a href="accueil.php">Retour à l'accueil</a>
+    <?php if ($_SESSION['idu'] === $idu): ?>
+        <a href="modif_profil.php?id=<?= $idu ?>">Modifier vos informations</a>
+    <?php endif; ?>
 </div>
 
     <h1><?php echo htmlspecialchars($user['pseudo']); ?></h1>
