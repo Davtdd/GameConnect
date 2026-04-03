@@ -92,10 +92,10 @@ if (!$posts_result) {
                         <strong><?= htmlspecialchars($post['pseudo']) ?></strong>
                     </a>
                 </div>
-
+                
                 <!-- Contenu du post -->
                 <div class="post-content">
-                    <p><?= nl2br(htmlspecialchars($post['contenu'])) ?></p>
+                    <p><?= nl2br(htmlspecialchars($post['contenu'], ENT_QUOTES, 'UTF-8')) ?></p>
                     <?php if (!empty($post['lien'])) : ?>
                         <a href="<?= htmlspecialchars($post['lien']) ?>"><?= htmlspecialchars($post['lien']) ?></a>
                     <?php endif; ?>
@@ -124,22 +124,27 @@ if (!$posts_result) {
                 <form action="add_comment.php" method="post" class="comment-form">
                     <textarea name="comment" rows="2" placeholder="Écrire un commentaire..." required></textarea>
                     <input type="hidden" name="post_id" value="<?= $post['idp'] ?>">
-                    <button type="submit">Envoyer</button>
+                    <button type="submit" name="boutmess">Envoyer</button>
                 </form>
 
                 <!-- Liste des commentaires existants -->
                 <div class="comments-list">
                     <?php
-                    $comments_res = mysqli_query($id, "
+                    $stmt = mysqli_prepare($id, "
                         SELECT c.texte, u.pseudo, u.avatar
                         FROM commentaires c
                         JOIN users u ON c.idu = u.idu
-                        WHERE c.idp = " . $post['idp'] . "
+                        WHERE c.idp = ?
                         ORDER BY c.date_creation ASC
                     ");
 
-                    while ($comment = mysqli_fetch_assoc($comments_res)) :
-                        $texte_comment = htmlspecialchars($comment['texte']);
+                    mysqli_stmt_bind_param($stmt, "i", $post['idp']);
+                    mysqli_stmt_execute($stmt);
+
+                    $result = mysqli_stmt_get_result($stmt);
+
+                    while ($comment = mysqli_fetch_assoc($result)) :
+                        $texte_comment = htmlspecialchars($comment['texte'], ENT_QUOTES, 'UTF-8');
                         if (strlen($texte_comment) > 250) {
                             $texte_comment = substr($texte_comment, 0, 247) . '...';
                         }
@@ -147,10 +152,12 @@ if (!$posts_result) {
                         <div class="comment">
                             <img src="<?= htmlspecialchars($comment['avatar']) ?>" alt="Avatar">
                             <strong><?= htmlspecialchars($comment['pseudo']) ?> :</strong>
-                            <span><?= nl2br($texte_comment) ?></span>
+                            <span><?= nl2br(htmlspecialchars($comment['texte'], ENT_QUOTES, 'UTF-8')) ?></span>
                         </div>
-                        mysqli_free_result($comments_res);
                     <?php endwhile; ?>
+                    <?php
+                        mysqli_stmt_close($stmt);
+                        ?>
                 </div>
             </div>
         </div>

@@ -6,13 +6,13 @@ require 'config.php';
 // Récupération des données du formulaire
 if(isset($_POST['bout'])){
 
-$nom = mysqli_real_escape_string($id, $_POST['nom']);
-    $prenom = mysqli_real_escape_string($id, $_POST['prenom']);
-    $email = mysqli_real_escape_string($id, $_POST['mail']);
-    $bio = mysqli_real_escape_string($id, $_POST['bio']);
+$nom = trim($_POST['nom']);
+    $prenom = trim($_POST['prenom']);
+    $email = trim($_POST['mail']);
+    $bio = trim($_POST['bio']);
     $mot_de_passe = $_POST['mdp'];
     $mot_de_passe2 = $_POST['mdp2'];
-    $pseudo = mysqli_real_escape_string($id, $_POST['pseudo']);
+    $pseudo = trim($_POST['pseudo']);
 
 if($mot_de_passe != $mot_de_passe2){
 
@@ -37,20 +37,30 @@ if (strlen($mot_de_passe) < 10) {
 }
 
  // Vérif si email déjà utilisé
-    $checkMail = mysqli_query($id, "SELECT idu FROM users WHERE email='$email'");
-    if (mysqli_num_rows($checkMail) > 0) {
-        $_SESSION['erreur'] = "Un compte existe déjà avec cet e-mail.";
-        header("Location: inscription.php");
-        exit();
-    }
+    $stmt = mysqli_prepare($id, "SELECT idu FROM users WHERE email = ?");
+mysqli_stmt_bind_param($stmt, "s", $email);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+
+if (mysqli_num_rows($result) > 0) {
+    $_SESSION['erreur'] = "Un compte existe déjà avec cet e-mail.";
+    header("Location: inscription.php");
+    exit();
+}
+mysqli_stmt_close($stmt);
 
     // Vérif si pseudo déjà utilisé
-    $checkPseudo = mysqli_query($id, "SELECT idu FROM users WHERE pseudo='$pseudo'");
-    if (mysqli_num_rows($checkPseudo) > 0) {
-        $_SESSION['erreur'] = "Ce pseudo est déjà pris.";
-        header("Location: inscription.php");
-        exit();
-    }
+$stmt = mysqli_prepare($id, "SELECT idu FROM users WHERE pseudo = ?");
+mysqli_stmt_bind_param($stmt, "s", $pseudo);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+
+if (mysqli_num_rows($result) > 0) {
+    $_SESSION['erreur'] = "Ce pseudo est déjà pris.";
+    header("Location: inscription.php");
+    exit();
+}
+mysqli_stmt_close($stmt);
 
 
 
@@ -77,50 +87,29 @@ $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
     }
 
 // Insertion dans la base
-    $req = "INSERT INTO users (nom, prenom, email, mot_de_passe, avatar, pseudo, bio)
-            VALUES ('$nom','$prenom','$email','$mot_de_passe_hash', '$chemin', '$pseudo', '$bio')";
+$stmt = mysqli_prepare($id, "
+    INSERT INTO users (nom, prenom, email, mot_de_passe, avatar, pseudo, bio)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+");
 
-    if (mysqli_query($id, $req)) {
-        echo "Inscription réussie !";
-    } else {
-        echo "Erreur SQL : " . mysqli_error($id);
-    }
+mysqli_stmt_bind_param($stmt, "sssssss",
+    $nom,
+    $prenom,
+    $email,
+    $mot_de_passe_hash,
+    $chemin,
+    $pseudo,
+    $bio
+);
+
+if (mysqli_stmt_execute($stmt)) {
+    header('Location: connexion.php');
+    exit();
+} else {
+    echo "Erreur SQL";
+}
 
 
-// $req2="select nom, prenom from users where mail='$email'";
-// $res2=mysqli_query($id,$req2);
-
-
-// while($ligne = mysqli_fetch_assoc($res2)){
-//     $nom = $ligne['nom'];
-//     $prenom = $ligne['prenom'];
-        
-    
-//     do {
-//         // Génère un nombre aléatoire entre 120000 et 999999
-//         $random_number = rand(120000, 999999);
-        
-//         // Crée le pseudo temporaire
-//         $nouveau_pseudo = strtolower(substr($nom, 0, 3) . 
-//                                    substr($prenom, 0, 3) . 
-//                                    substr($email, 0, 2) . 
-//                                    $random_number);
-        
-//         // Vérifie si le pseudo existe déjà
-//         $check_query = "SELECT COUNT(*) as count FROM users WHERE pseudo = '$nouveau_pseudo'";
-//         $check_result = mysqli_query($id, $check_query);
-//         $count = mysqli_fetch_assoc($check_result)['count'];
-        
-//     } while($count > 0); // Continue tant que le pseudo existe
-    
-//     // Met à jour avec le pseudo unique
-//     $req3 = "UPDATE users SET pseudo = '$nouveau_pseudo' WHERE mail='$email'";    
-//     $resultat = mysqli_query($id, $req3);
-    
-//     if(!$resultat) {
-//         echo "Erreur lors de la mise à jour: " . mysqli_error($id);
-//     }
-// }
 
 header('Location: connexion.php');
 exit();

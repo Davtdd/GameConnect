@@ -11,12 +11,13 @@ if (!isset($_SESSION['idu'])) {
 $idu = $_SESSION['idu'];
 // Traitement du formulaire
 if (isset($_POST['submit'])) {
-    $contenu = mysqli_real_escape_string($id, $_POST['contenu']);
-    $lien = !empty($_POST['lien']) ? mysqli_real_escape_string($id, $_POST['lien']) : null;
+
+    $contenu = trim($_POST['contenu']);
+    $lien = !empty($_POST['lien']) ? trim($_POST['lien']) : null;
     
     $image_path = NULL;
 
-    // Gestion upload image
+    // Upload image
     if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
         $dossier = 'uploads/posts/';
         if (!is_dir($dossier)) mkdir($dossier, 0777, true);
@@ -31,21 +32,21 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    // Insertion dans la base
+    // Requête préparée
     $stmt = mysqli_prepare($id, "
-    INSERT INTO posts (idu, contenu, image, lien, date_creation)
-    VALUES (?, ?, ?, ?, NOW())
-");
+        INSERT INTO posts (idu, contenu, image, lien, date_creation)
+        VALUES (?, ?, ?, ?, NOW())
+    ");
 
-mysqli_stmt_bind_param($stmt, "isss", $idu, $contenu, $image_path, $lien);
+    mysqli_stmt_bind_param($stmt, "isss", $idu, $contenu, $image_path, $lien);
 
     if (mysqli_stmt_execute($stmt)) {
-    $_SESSION['success'] = "Post créé avec succès !";
-    header("Location: accueil.php"); // Retour à l'accueil
-    exit();
-} else {
-    $erreur = "Erreur SQL : " . mysqli_error($id);
-}
+        $_SESSION['success'] = "Post créé avec succès !";
+        header("Location: accueil.php");
+        exit();
+    } else {
+        $erreur = "Erreur SQL";
+    }
 }
 ?>
 
