@@ -1,0 +1,3 @@
+email : eliote@gmail.com
+pseudo : dwriteger
+mdp : Eliote1234
