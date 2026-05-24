@@ -585,3 +585,115 @@ postId=1, userId=4
 alreadyLiked: non
 INSERT réussi, ID insert: 22
 likeCount final = 1, liked = true
+2026-04-07 10:36:58 - Début like.php
+POST : Array
+(
+    [post_id] => 1
+)
+
+SESSION : Array
+(
+    [pseudo] => Stergamer
+    [idu] => 5
+)
+
+postId=1, userId=5
+alreadyLiked: non
+INSERT réussi, ID insert: 23
+likeCount final = 2, liked = true
+2026-04-07 10:38:07 - Début like.php
+POST : Array
+(
+    [post_id] => 3
+)
+
+SESSION : Array
+(
+    [pseudo] => Stergamer
+    [idu] => 5
+)
+
+postId=3, userId=5
+alreadyLiked: non
+INSERT réussi, ID insert: 24
+likeCount final = 1, liked = true
+2026-04-07 10:47:57 - Début like.php
+POST : Array
+(
+    [post_id] => 5
+)
+
+SESSION : Array
+(
+    [pseudo] => Stergamer
+    [idu] => 5
+)
+
+postId=5, userId=5
+alreadyLiked: non
+INSERT réussi, ID insert: 25
+likeCount final = 2, liked = true
+2026-04-07 10:47:58 - Début like.php
+POST : Array
+(
+    [post_id] => 4
+)
+
+SESSION : Array
+(
+    [pseudo] => Stergamer
+    [idu] => 5
+)
+
+postId=4, userId=5
+alreadyLiked: non
+INSERT réussi, ID insert: 26
+likeCount final = 2, liked = true
+2026-04-07 10:48:00 - Début like.php
+POST : Array
+(
+    [post_id] => 6
+)
+
+SESSION : Array
+(
+    [pseudo] => Stergamer
+    [idu] => 5
+)
+
+postId=6, userId=5
+alreadyLiked: non
+INSERT réussi, ID insert: 27
+likeCount final = 3, liked = true
+2026-04-07 10:48:02 - Début like.php
+POST : Array
+(
+    [post_id] => 8
+)
+
+SESSION : Array
+(
+    [pseudo] => Stergamer
+    [idu] => 5
+)
+
+postId=8, userId=5
+alreadyLiked: non
+INSERT réussi, ID insert: 28
+likeCount final = 3, liked = true
+2026-04-07 10:48:04 - Début like.php
+POST : Array
+(
+    [post_id] => 10
+)
+
+SESSION : Array
+(
+    [pseudo] => Stergamer
+    [idu] => 5
+)
+
+postId=10, userId=5
+alreadyLiked: non
+INSERT réussi, ID insert: 29
+likeCount final = 2, liked = true
